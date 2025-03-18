@@ -12,7 +12,7 @@ public class Item : MonoBehaviour
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
         rb.gravityScale = 0; // Disable gravity
-        rb.linearVelocity = new Vector2(0, -5f); // Set constant fall speed   
+        rb.linearVelocity = new Vector2(0, -5f); // Set fall speed   
     }
 
 

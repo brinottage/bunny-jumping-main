@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -9,6 +10,8 @@ public class Player : MonoBehaviour
 	[HideInInspector] bool isGameOver = false;
 
 	public Rigidbody2D rb;
+
+	public bool isInvincible = false;
 
     void Start()
     {
@@ -52,7 +55,7 @@ public class Player : MonoBehaviour
 		rigidbody.bodyType = RigidbodyType2D.Dynamic;
 		rigidbody.linearVelocity = Vector2.up * 7f;
 		rigidbody.freezeRotation = false;
-		rigidbody.AddTorque(245f * (Random.value > 0.5f ? 1f : -1f), ForceMode2D.Force);
+		rigidbody.AddTorque(245f * (UnityEngine.Random.value > 0.5f ? 1f : -1f), ForceMode2D.Force);
 	}
 
 	private void InstantiateParicles()

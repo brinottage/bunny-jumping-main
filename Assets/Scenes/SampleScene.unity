@@ -577,6 +577,7 @@ MonoBehaviour:
   DeadEffect: {fileID: 1313568913462581193, guid: fd8c831174bf27f45b7d27fee071c84b,
     type: 3}
   rb: {fileID: 316700633}
+  isInvincible: 1
 --- !u!114 &316700641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1298,6 +1299,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d09a080010c373642a9bc25319bc949e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IgnoreInvinciblity: 1
 --- !u!61 &823978376
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1458,7 +1460,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   JumpBoostItemPrefab: {fileID: 8680059378852247282, guid: e88a598bfbd244693a669768c78d0e6b,
     type: 3}
-  InvulnItemPrefab: {fileID: 0}
+  InvulnItemPrefab: {fileID: 1801798472912175960, guid: c8c5b2ee293ad4393b8fba30c021b4c5,
+    type: 3}
 --- !u!1 &868216404
 GameObject:
   m_ObjectHideFlags: 0
