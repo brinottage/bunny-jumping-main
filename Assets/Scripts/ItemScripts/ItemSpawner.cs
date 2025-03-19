@@ -12,7 +12,7 @@ public class ItemSpawner : MonoBehaviour
 
     private Vector3 spawnPos;
 
-    private float totalTime = 10f;
+    private float totalTime = 15f;
 
     private float currentTime;
 

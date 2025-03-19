@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,11 +12,15 @@ public class Player : MonoBehaviour
 
 	public Rigidbody2D rb;
 
-	public bool isInvincible = false;
+	public bool isInvincible;
 
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
+
+		isInvincible = false;
+
+		Debug.Log(isInvincible);
     }
 
     public void GameOver()

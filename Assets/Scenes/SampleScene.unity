@@ -577,7 +577,7 @@ MonoBehaviour:
   DeadEffect: {fileID: 1313568913462581193, guid: fd8c831174bf27f45b7d27fee071c84b,
     type: 3}
   rb: {fileID: 316700633}
-  isInvincible: 1
+  isInvincible: 0
 --- !u!114 &316700641
 MonoBehaviour:
   m_ObjectHideFlags: 0
