@@ -38,9 +38,9 @@ public class Player : MonoBehaviour
 			TwistRigidbody();
 			InstantiateParicles();
 
-			FindObjectOfType<Camera>().GetComponent<FollowObject>().enabled = false;
-			FindObjectOfType<PlatformCleaner>().GetComponent<FollowObject>().enabled = false;
-			FindObjectOfType<ScoreCounter>().enabled = false;
+			FindFirstObjectByType<Camera>().GetComponent<FollowObject>().enabled = false;
+			FindFirstObjectByType<PlatformCleaner>().GetComponent<FollowObject>().enabled = false;
+			FindFirstObjectByType<ScoreCounter>().enabled = false;
 
 			Destroy(gameObject, 3f);
 		}

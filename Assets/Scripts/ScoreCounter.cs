@@ -13,7 +13,7 @@ public class ScoreCounter : MonoBehaviour
 
 	private void Awake()
 	{
-		playerTransform = FindObjectOfType<Player>().transform;
+		playerTransform = FindFirstObjectByType<Player>().transform;
 	}
 
 	private void Start()

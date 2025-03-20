@@ -10,7 +10,7 @@ public class ScoreLable : MonoBehaviour
 
 	private void Awake()
 	{
-		scoreCounter = FindObjectOfType<ScoreCounter>();
+		scoreCounter = FindFirstObjectByType<ScoreCounter>();
 		lable = GetComponent<TextMeshProUGUI>();
 	}
 

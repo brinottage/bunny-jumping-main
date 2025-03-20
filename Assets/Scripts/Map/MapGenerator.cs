@@ -24,7 +24,7 @@ public class MapGenerator : MonoBehaviour
 
 	private void Awake()
 	{
-		player = FindObjectOfType<Player>().transform;
+		player = FindFirstObjectByType<Player>().transform;
 		Camera cam = Camera.main;
 		float cameraXSize = cam.orthographicSize * cam.aspect;
 		bounds = new Vector2(-cameraXSize + player.position.x + 2, cameraXSize + player.position.x - 2);
