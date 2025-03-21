@@ -25,7 +25,7 @@ public class LoadGame : MonoBehaviour
 
         if (buttonText.Equals("Climbing", System.StringComparison.OrdinalIgnoreCase))
         {
-            Debug.Log("Moving Scenes");
+            Debug.Log("Climbing Mode Selected");
             SceneManager.LoadScene("SampleScene");
         }
         else if (buttonText.Equals("Racing", System.StringComparison.OrdinalIgnoreCase))
@@ -35,6 +35,7 @@ public class LoadGame : MonoBehaviour
         else if (buttonText.Equals("Hopping", System.StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Hopping Mode Selected");
+            SceneManager.LoadScene("HoppingGame");
         }
 }
 }

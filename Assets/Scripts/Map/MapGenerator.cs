@@ -92,8 +92,10 @@ public class MapGenerator : MonoBehaviour
 		{
 			Vector3 position = new Vector3(Random.Range(bounds.x, bounds.y), Random.Range(y, y + generatedSize), 5);
 			GameObject enemyPrefub = enemySet.GetRandomObject();
+			Debug.Log("Generated: " + enemyPrefub);
 			Instantiate(enemyPrefub, position, new Quaternion(), transform);
 		}
+
 	}
 
 	private float GetComplexity(float currentY)
