@@ -12,6 +12,12 @@ public class FollowObject : MonoBehaviour
 	[SerializeField] private bool lockDownY;
 	private Vector3 offset;
 
+	public bool racing;
+
+	[SerializeField] private RacingPlayer playerOne;
+
+	[SerializeField] private RacingPlayer playerTwo;
+
 	private void Start()
 	{
 		Init();
@@ -19,6 +25,12 @@ public class FollowObject : MonoBehaviour
 
 	private void FixedUpdate()
 	{
+		
+
+		if (racing) {
+			FindHighestPlayer();
+		}
+
 		transform.position = GetFollowingPosition(targetObject, offset);
 	}
 
@@ -58,5 +70,17 @@ public class FollowObject : MonoBehaviour
 	private void Init()
 	{
 		offset = transform.position - targetObject.position;
+	}
+
+	private void FindHighestPlayer(){
+		if (playerOne.transform.position.y > playerTwo.transform.position.y) {
+
+			targetObject = playerOne.transform;
+
+		} else {
+
+			targetObject = playerTwo.transform;
+
+		}
 	}
 }

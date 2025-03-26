@@ -21,7 +21,6 @@ public class LoadGame : MonoBehaviour
     private void OnButtonClick()
     {
         string buttonText = buttonName.text.Trim();
-        Debug.Log($"Click: '{buttonText}'");
 
         if (buttonText.Equals("Climbing", System.StringComparison.OrdinalIgnoreCase))
         {
@@ -31,6 +30,7 @@ public class LoadGame : MonoBehaviour
         else if (buttonText.Equals("Racing", System.StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Racing Mode Selected");
+            SceneManager.LoadScene("RacingGame");
         }
         else if (buttonText.Equals("Hopping", System.StringComparison.OrdinalIgnoreCase))
         {

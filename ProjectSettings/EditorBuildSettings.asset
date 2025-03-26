@@ -14,5 +14,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HoppingGame.unity
     guid: 6273176a6a7b642eaa69841b5d0cba11
+  - enabled: 1
+    path: Assets/Scenes/RacingGame.unity
+    guid: 65c2ac86afaae4dacaeb31e056a558ce
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

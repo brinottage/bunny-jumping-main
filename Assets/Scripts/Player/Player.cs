@@ -14,6 +14,8 @@ public class Player : MonoBehaviour
 
 	public bool isInvincible;
 
+	public bool racing;
+
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
@@ -23,7 +25,7 @@ public class Player : MonoBehaviour
 		Debug.Log(isInvincible);
     }
 
-    public void GameOver()
+    public virtual void GameOver()
 	{
 		if (!isGameOver)
 		{
@@ -40,14 +42,18 @@ public class Player : MonoBehaviour
 
 			FindFirstObjectByType<Camera>().GetComponent<FollowObject>().enabled = false;
 			FindFirstObjectByType<PlatformCleaner>().GetComponent<FollowObject>().enabled = false;
-			FindFirstObjectByType<ScoreCounter>().enabled = false;
+			if (!racing) {
+				FindFirstObjectByType<ScoreCounter>().enabled = false;
+			}
+			
 
 			Destroy(gameObject, 3f);
 		}
 	}
 
-	private void OnDestroy()
+	public void OnDestroy()
 	{
+		Debug.Log("Destroyed");
 		Scene scene = SceneManager.GetActiveScene();
 		SceneManager.LoadScene(scene.name);
 	}
