@@ -2972,7 +2972,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'D
+  m_text: '
 
     >'
   m_isRightToLeft: 0
@@ -3575,8 +3575,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4283256421
-  m_fontColor: {r: 0.3962264, g: 0.305114, b: 0.3009078, a: 1}
+    rgba: 4288761668
+  m_fontColor: {r: 0.2653524, g: 0.30889285, b: 0.6320754, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3969,7 +3969,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'A
+  m_text: '
 
     <'
   m_isRightToLeft: 0

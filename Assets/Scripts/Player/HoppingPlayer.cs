@@ -7,20 +7,15 @@ using UnityEngine.SceneManagement;
 
 public class HoppingPlayer : MonoBehaviour
 {
-	[SerializeField] private GameObject DeadEffect;
+	[SerializeField] private GameObject DeadEffect; // Death animation
 	[HideInInspector] bool isGameOver = false;
 
 	public Rigidbody2D rb;
-
-	public bool isInvincible;
 
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
-		isInvincible = false;
-
-		Debug.Log(isInvincible);
     }
 
     public void GameOver()
@@ -33,16 +28,10 @@ public class HoppingPlayer : MonoBehaviour
 
 
 			GetComponent<Animator>().SetTrigger("hurt");
-
 			GetComponent<HoppingMovement>().enabled = false;
-			//GetComponent<PlayerRotater>().enabled = false;
 
 			TwistRigidbody();
 			InstantiateParicles();
-
-			//FindFirstObjectByType<Camera>().GetComponent<FollowObject>().enabled = false;
-			//FindFirstObjectByType<PlatformCleaner>().GetComponent<FollowObject>().enabled = false;
-			//FindFirstObjectByType<ScoreCounter>().enabled = false;
 
 			Destroy(gameObject, 3f);
 		}

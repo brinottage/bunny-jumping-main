@@ -8,6 +8,8 @@ public class ScoreZone : MonoBehaviour
 
     private bool scored;
 
+    private bool canScore = true;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,9 +21,11 @@ public class ScoreZone : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (scored) {
+        // Upon colliding with the score zone, th score counter is increased
+        if (scored && canScore) {
             Score.addScore();
             scored = false;
+            canScore = false;
         }
     }
 

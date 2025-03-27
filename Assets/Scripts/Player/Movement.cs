@@ -4,52 +4,47 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-	public float moveSpeed = 1.5f;
+	public float moveSpeed = 1.5f; // Determines speed of movement
 
 	private Rigidbody2D rb;
 
-	[SerializeField] private RacingPlayer rp;
+	[SerializeField] private RacingPlayer rp; // Stores the RacingPlayer it is attached to
 
 	private void Awake()
 	{
 		rb = GetComponent<Rigidbody2D>();
 	}
 
-	/*private void FixedUpdate()
-	{
-		float move = Input.GetAxis("Horizontal");
-		
-
-		if (!rp.isPlayerOne) {
-			
-		}
-
-		rb.linearVelocity = new Vector2(moveSpeed * move, rb.linearVelocity.y);
-	}*/
-
 	private void FixedUpdate()
     {
         float move = 0f;
 
-		if (rp != null){
+		if (rp != null){ // Activates if the Racing mode is set
 
 		
         	if (rp.isPlayerOne) 
         	{
             	
-            	move = Input.GetAxis("Vertical");
+				// Player One uses the left and right arrows
+            	move = Input.GetAxis("Horizontal");
         	}
         	else
         	{
-            	move = Input.GetAxis("Horizontal");
+				// Player Two uses key A and key D
+            	move = Input.GetAxis("Vertical");
         	}
 
         
 
 		} else {
-			move = Input.GetAxis("Vertical");
+
+			// If there is no RacingPlayer, then the game mode is Climbing
+			// The Player uses the left and right arrows
+			move = Input.GetAxis("Horizontal");
 		}
 
+		// Movement is applied 
+		// Sped up via moveSpeed
 		rb.linearVelocity = new Vector2(moveSpeed * move, rb.linearVelocity.y);
 
 		

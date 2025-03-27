@@ -7,12 +7,14 @@ using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
-	[SerializeField] private GameObject DeadEffect;
+	[SerializeField] private GameObject DeadEffect; // Death animation
 	[HideInInspector] bool isGameOver = false;
 
 	public Rigidbody2D rb;
 
-	public bool isInvincible;
+	public bool isInvincible; // Whether or not the player is invincible
+
+	 private float invinciblityTimer; // How long invincibility lasts
 
 	public bool racing;
 
@@ -20,10 +22,27 @@ public class Player : MonoBehaviour
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
 
-		isInvincible = false;
+		isInvincible = false; // Player begins vulnerable to all forms of damage
 
 		Debug.Log(isInvincible);
     }
+
+
+	void Update()
+    {
+		// Disables invincibility after 5 seconds
+        if (isInvincible)
+        {
+            invinciblityTimer += Time.deltaTime;
+            if (invinciblityTimer >= 5f)
+            {
+                isInvincible = false;
+                invinciblityTimer = 0f;
+                
+            }
+        }
+    }
+
 
     public virtual void GameOver()
 	{
@@ -44,8 +63,7 @@ public class Player : MonoBehaviour
 			FindFirstObjectByType<PlatformCleaner>().GetComponent<FollowObject>().enabled = false;
 			if (!racing) {
 				FindFirstObjectByType<ScoreCounter>().enabled = false;
-			}
-			
+			} // If Climbing Mode is active and the game has ended, the Score counter is disabled
 
 			Destroy(gameObject, 3f);
 		}

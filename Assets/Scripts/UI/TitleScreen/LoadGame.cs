@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class LoadGame : MonoBehaviour
 {
 
-    [SerializeField] private TextMeshProUGUI buttonName;
-    [SerializeField] private Button thisButton; // Reference to the button
+    [SerializeField] private TextMeshProUGUI buttonName; // The button's name, in text
+    [SerializeField] private Button thisButton; // Reference to the button itself
 
     void Start()
     {
@@ -22,6 +22,7 @@ public class LoadGame : MonoBehaviour
     {
         string buttonText = buttonName.text.Trim();
 
+        // Each if statement loads the Climbing Game, Racing Game, and Hopping Game respectively
         if (buttonText.Equals("Climbing", System.StringComparison.OrdinalIgnoreCase))
         {
             Debug.Log("Climbing Mode Selected");

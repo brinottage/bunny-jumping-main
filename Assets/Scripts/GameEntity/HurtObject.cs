@@ -5,7 +5,7 @@ using UnityEngine;
 public class HurtObject : MonoBehaviour
 {
 
-	[SerializeField] private bool IgnoreInvinciblity = false;
+	[SerializeField] private bool IgnoreInvinciblity = false; // Ignores invincibility
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
@@ -13,6 +13,7 @@ public class HurtObject : MonoBehaviour
 		if (player != null)
 		{
 
+			
 			if (IgnoreInvinciblity) {
 				if (collision.contacts[0].normal.y >= -0.3f)
 				{

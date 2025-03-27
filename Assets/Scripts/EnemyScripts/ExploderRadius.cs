@@ -23,7 +23,7 @@ public class ExploderRadius : MonoBehaviour
         Debug.Log("Player in Radius");
 
        
-
+        // After colliding with the player, or certain other objects, it sets the bomb to explode
 		Player player = collider.gameObject.GetComponent<Player>();
         if(EnemyExploder.explode == false) {
             EnemyExploder.explode = true;

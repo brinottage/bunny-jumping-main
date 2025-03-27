@@ -5,11 +5,12 @@ public class Obstacle : MonoBehaviour
 {
 
     private Rigidbody2D rb;
-    public float speed = 5f; // Speed of movement
+    public float speed = 5f;
 
     void Start()
     {
 
+        // Obstacle destroys itself after 10 seconds
         Destroy(gameObject, 10f);
         
     }

@@ -6,7 +6,7 @@ public class Item : MonoBehaviour
 
     private Rigidbody2D rb;
 
-    [SerializeField] public int chance;
+    [SerializeField] public int chance; // Spawn chance
 
     void Start()
     {
@@ -31,12 +31,11 @@ public class Item : MonoBehaviour
     void Update()
     {
 
-
         // Destroy Item within 10 seconds of it not being acquired
         Destroy(gameObject, 10f);
     }
 
-    public virtual void effect(Player player){}
+    public virtual void effect(Player player){} // Places an effect on the player upon contact
 
 
 }

@@ -23,6 +23,7 @@ public class HoppingScore : MonoBehaviour
 
     public void addScore() {
 
+        // Increases score each time the player hits a ScoreZone
         score += 1;
         ScoreText.text = "Score: " + score;
 

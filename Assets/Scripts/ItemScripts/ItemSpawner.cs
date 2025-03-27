@@ -12,9 +12,9 @@ public class ItemSpawner : MonoBehaviour
 
     [SerializeField] private FalseItem FalseItemPrefab;
 
-    private Vector3 spawnPos;
+    private Vector3 spawnPos; // Where the item sapwns
 
-    private float totalTime = 15f;
+    private float totalTime = 15f; // Time between potential spawns
 
     private float currentTime;
 
@@ -45,7 +45,7 @@ public class ItemSpawner : MonoBehaviour
         // Every 10 seconds, roll a random num. If it's below the Item's Chance, the Item spawns
         float randomNum = UnityEngine.Random.Range(0f, 100f);
 
-        // Spawns Item Item at Prefab
+        // Spawns Item at Prefab
         if (randomNum <= JumpBoostItemPrefab.chance) {
             Instantiate(JumpBoostItemPrefab, spawnPos, transform.rotation);
         }
@@ -59,7 +59,7 @@ public class ItemSpawner : MonoBehaviour
         // Every 10 seconds, roll a random num. If it's below the Item's Chance, the Item spawns
         float randomNum = UnityEngine.Random.Range(0f, 100f);
 
-        // Spawns Item Item at Prefab
+        // Spawns Item at Prefab
         if (randomNum <= InvulnItemPrefab.chance) {
             Instantiate(InvulnItemPrefab, spawnPos, transform.rotation);
         }

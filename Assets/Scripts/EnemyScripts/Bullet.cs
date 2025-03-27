@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // Bullet destroys itself after 10 seconds
+        Destroy(gameObject, 10f);
     }
 }

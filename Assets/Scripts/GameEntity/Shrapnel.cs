@@ -11,8 +11,8 @@ public class Shrapnel : MonoBehaviour
     void Start()
     {
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = movement;
-        Destroy(gameObject, 20f);
+        rb.linearVelocity = movement; // Moves in accordance to the movement variable
+        Destroy(gameObject, 20f); // Destroys itself after 5 seconds
     }
 
     // Update is called once per frame

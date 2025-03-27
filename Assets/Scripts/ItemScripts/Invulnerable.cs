@@ -4,29 +4,18 @@ using UnityEngine;
 public class Invulnerable : Item
 {
 
-    private float totalTime = 10f;
 
-    private float currentTime;
 
     public override void effect(Player player) {
 
-        Debug.Log("Pre-Effect:" + player.isInvincible);
+        // The player is made near-invincible for 5 seconds,
+        // during which nothing can harm them save for the spikes
         if (player.isInvincible == false){
 
             Debug.Log("Inv on");
             player.isInvincible = true;
 
-            currentTime = totalTime;
-            currentTime -= Time.deltaTime;
-
-            if (currentTime == 0f) {
-                player.isInvincible = false;
-                Debug.Log("Inv off");
-            }
-
         }
-        
-        
 
     }
 }

@@ -20,7 +20,7 @@ public class HoppingMovement : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            // Charging
+            // Increases charge as the space key is held. Can't exceed the maximum charge
             charge += Time.deltaTime;
             charge = Mathf.Min(charge, maxCharge);
             isCharging = true;
@@ -28,11 +28,12 @@ public class HoppingMovement : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Space) && isCharging)
         {
-            // Jump force is calculated and applied
+            // The charge is taken and scaled to jump force
+            // When space is released, jump force is applied to the player
             float jumpForce = (charge / maxCharge) * maxJumpForce;
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
 
-            // Charge resets
+            // Charge resets back to zero
             charge = 0f;
             isCharging = false;
         }
@@ -40,7 +41,7 @@ public class HoppingMovement : MonoBehaviour
         UpdateChargeDisplayText();
     }
 
-    void UpdateChargeDisplayText()
+    void UpdateChargeDisplayText() // Displays the current charge level
     {
         if (chargeDisplayText != null)
         {

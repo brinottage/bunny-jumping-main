@@ -7,18 +7,21 @@ public class Victory : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI victoryText;
 
-    // Update is called once per frame
+    
     public void VictoryDisplay(string winner)
     {
 
+        // Announces Player One as the winner by changing the victoryText
         if (winner == "PlayerOne") {
-            Debug.Log(victoryText.text);
+            
             victoryText.text = "Player One Wins!";
-            Debug.Log(victoryText.text);
-        }  else if (winner == "PlayerTwo") {
-             Debug.Log(victoryText.text);
+            
+        }  
+        // Announces Player Two as the winner by changing the victoryText
+        else if (winner == "PlayerTwo") {
+           
             victoryText.text = "Player Two Wins!";
-            Debug.Log(victoryText.text);
+           
         }
 
     }
